@@ -2,7 +2,7 @@
 
 namespace Mrterryh\Repositories\Contracts;
 
-interface RepositoryInterface
+interface RepositoryContract
 {
 	/**
 	 * Returns all resources for the table.

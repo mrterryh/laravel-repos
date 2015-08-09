@@ -2,12 +2,12 @@
 
 namespace Mrterryh\Repositories\Base;
 
-use Mrterryh\Repositories\Contracts\RepositoryInterface;
+use Mrterryh\Repositories\Contracts\RepositoryContract;
 
 use Illuminate\Foundation\Application;
 use Exception;
 
-abstract class EloquentRepository implements RepositoryInterface
+abstract class EloquentRepository implements RepositoryContract
 {
 	/**
 	 * The Illuminate Application instance.
