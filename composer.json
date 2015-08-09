@@ -1,6 +1,6 @@
 {
 	"name": "mrterryh/laravel-repos",
-	"description": "",
+	"description": "Small Laravel 5 repositories package to abstract the database layer of your web application.",
 	"keywords": ["laravel", "repositories", "eloquent", "database"],
 	"license": "MIT",
 	"authors": [
