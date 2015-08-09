@@ -1,0 +1,20 @@
+{
+	"name": "mrterryh/laravel-repos",
+	"description": "",
+	"keywords": ["laravel", "repositories", "eloquent", "database"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Terry Harvey",
+			"email": "contact@terryharvey.co.uk"
+		}
+	],
+	"require": {
+		"php": ">=5.4.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Mrterryh\\Repositories\\": "src/Mrterryh/Repositories/"
+		}
+	}
+}
