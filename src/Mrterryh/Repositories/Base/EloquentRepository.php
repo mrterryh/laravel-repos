@@ -150,11 +150,10 @@ abstract class EloquentRepository implements RepositoryContract
 	
 	/**
 	 * Deletes all resources.
+	 * @return mixed
 	 */
 	 public function deleteAll()
 	 {
-	 	$table = $this->getModel()->table;
-	 	
-	 	return DB::table($table)->truncate();
+	 	return $this->getModel()->truncate();
 	 }
 }
