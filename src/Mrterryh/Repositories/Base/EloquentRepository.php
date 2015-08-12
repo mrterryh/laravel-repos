@@ -6,6 +6,7 @@ use Mrterryh\Repositories\Contracts\RepositoryContract;
 
 use Illuminate\Foundation\Application;
 use Exception;
+use DB;
 
 abstract class EloquentRepository implements RepositoryContract
 {
@@ -146,4 +147,14 @@ abstract class EloquentRepository implements RepositoryContract
 	{
 		return $this->getModel()->select($select)->where($conditionals)->first();
 	}
+	
+	/**
+	 * Deletes all resources.
+	 */
+	 public function deleteAll()
+	 {
+	 	$table = $this->getModel()->table;
+	 	
+	 	return DB::table($table)->truncate();
+	 }
 }
