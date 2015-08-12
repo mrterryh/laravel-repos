@@ -73,4 +73,9 @@ interface RepositoryContract
 	 * @return mixed
 	 */
 	public function getWhere(array $conditionals, array $select = array('*'));
+	
+	/**
+	 * Deletes all resources.
+	 */
+	 public function deleteAll();
 }
