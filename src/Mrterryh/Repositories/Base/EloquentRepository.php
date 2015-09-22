@@ -142,6 +142,17 @@ abstract class EloquentRepository implements RepositoryContract
 	{
 		return $this->getModel()->find($id);
 	}
+	
+	/**
+	 * Returns the deleted resource with the given ID.
+	 * @param  integer $id     The ID of the resource to fetch.
+	 * @param  array   $select An array containing the names of the columns to select.
+	 * @return mixed
+	 */
+	public function findDeleted($id, array $select = array('*'))
+	{
+		return $this->getModel()->withTrashed()->find($id);
+	}
 
 	/**
 	 * Returns the single resource that matches the provided criteria.
@@ -172,4 +183,14 @@ abstract class EloquentRepository implements RepositoryContract
 	{
 		return $this->getModel()->select($select)->whereNotNull('deleted_at')->withTrashed()->get();
 	}
+	
+	/**
+	 * Restores the resource with the given ID.
+	 * @param  integer $id The ID of the resource to restore.
+	 * @return mixed
+	 */
+	public function restore($id)
+	{
+		return $this->find($id)->restore();
+	}f
 }
