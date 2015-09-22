@@ -192,5 +192,5 @@ abstract class EloquentRepository implements RepositoryContract
 	public function restore($id)
 	{
 		return $this->find($id)->restore();
-	}f
+	}
 }
