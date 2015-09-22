@@ -162,4 +162,14 @@ abstract class EloquentRepository implements RepositoryContract
 	 {
 	 	return $this->getModel()->truncate();
 	 }
+	 
+	/**
+	 * Returns all deleted resources for the table.
+	 * @param  array  $select An array containing the names of the columns to select.
+	 * @return mixed
+	 */
+	public function allDeleted(array $select = array('*'))
+	{
+		return $this->getModel()->withTrashed()->select($select)->get();
+	}
 }
