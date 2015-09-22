@@ -113,7 +113,13 @@ abstract class EloquentRepository implements RepositoryContract
 	 */
 	public function update($id, array $data)
 	{
-		return $this->find($id)->update($data);
+		$entity = $this->find($id);
+
+		foreach ($data as $key => $value) {
+			$entity->$key = $value;
+		}
+
+		return $entity->save();
 	}
 
 	/**
