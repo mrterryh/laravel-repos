@@ -170,6 +170,6 @@ abstract class EloquentRepository implements RepositoryContract
 	 */
 	public function allDeleted(array $select = array('*'))
 	{
-		return $this->getModel()->withTrashed()->select($select)->get();
+		return $this->getModel()->select($select)->whereNotNull('deleted_at')->withTrashed()->get();
 	}
 }
